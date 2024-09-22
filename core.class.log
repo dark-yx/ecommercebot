@@ -1,0 +1,183 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982840685@s.whatsapp.net',
+    fromMe: false,
+    id: '7D50CAFC30C81CA8FE70045BE0DE5292',
+    participant: undefined
+  },
+  messageTimestamp: 1727041004,
+  pushName: 'Yosué',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '593982840685'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_60f725b7-94b5-4663-bad6-90b2d5c2293b',
+  keyword: 'key_8eaff006-b551-4102-b842-96ca2ddf9b22',
+  answer: 'Hola, para ayudarte a cumplir tus metas de bienestar y control de peso tenemos las siguientes opciones con las que puedes empezar.',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '0d81c9d8dd70949c1c2fabf014b79cbc'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982840685@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB068383604A5AA6AEFDF',
+    participant: undefined
+  },
+  messageTimestamp: 1727041006,
+  pushName: 'Yosué',
+  broadcast: false,
+  message: Message {
+    protocolMessage: ProtocolMessage {
+      type: 4,
+      ephemeralExpiration: 0,
+      ephemeralSettingTimestamp: [Long],
+      disappearingMode: [DisappearingMode]
+    },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '',
+  from: '593982840685'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_794ffd82-47b4-40c4-a9ea-6cdbc34c0b20',
+  keyword: 'ans_60f725b7-94b5-4663-bad6-90b2d5c2293b',
+  answer: '1️⃣ = *Comprar productos*\n' +
+    '2️⃣ = *Solicitar asesoría*\n' +
+    '3️⃣ = *Descargar el catalogo*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1500,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '3ccd3297c136f3028c6cf6c60e4802bf'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_9dabf612-b03b-47f0-8dac-92137618bcd7',
+  keyword: 'ans_794ffd82-47b4-40c4-a9ea-6cdbc34c0b20',
+  answer: '👉 *Ingresa el número de la opción que elijas:*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3ce8c4545bd268cffd52ce64889cefc8'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982840685@s.whatsapp.net',
+    fromMe: false,
+    id: '3DA7C9923EA2FBEBB72A93BD1C912F15',
+    participant: undefined
+  },
+  messageTimestamp: 1727041010,
+  pushName: 'Yosué',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '593982840685'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982840685@s.whatsapp.net',
+    fromMe: false,
+    id: '24CCF1B0C096752E93D3AC5BF563AB3E',
+    participant: undefined
+  },
+  messageTimestamp: 1727041019,
+  pushName: 'Yosué',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '593982840685'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982840685@s.whatsapp.net',
+    fromMe: false,
+    id: '06560F127BEE34EC0915306A3B792950',
+    participant: undefined
+  },
+  messageTimestamp: 1727041038,
+  pushName: 'Yosué',
+  broadcast: false,
+  message: Message {
+    conversation: 'Información sobre los productos y que debo tromar para control de peso',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Información sobre los productos y que debo tromar para control de peso',
+  from: '593982840685'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_f73c0f4c-4053-463e-b9cc-5be81189ce57',
+  keyword: 'ans_6431aea9-3f28-47d5-b054-a70b900242eb',
+  answer: 'Estoy feliz de poder ayudarte',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '38c6d805cbedba6e0e3b1dead74dab60'
+}

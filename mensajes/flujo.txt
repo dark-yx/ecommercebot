@@ -1,0 +1,6 @@
+Elija una opción para continuar:
+1️⃣ = *Seguir en el flujo*
+2️⃣ = *Menú de servicios*
+3️⃣ = *Menú principal*
+
+0️⃣ = Para salir de este menu

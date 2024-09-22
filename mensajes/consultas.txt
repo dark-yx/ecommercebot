@@ -1,0 +1,6 @@
+Aqui tienes estas opciones para continuar:
+1️⃣ = *Hacer una nueva consulta*
+2️⃣ = *Conocer los servicios*
+3️⃣ = *Ir al menu principal*
+
+0️⃣ = Salir de este menu
