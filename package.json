@@ -18,8 +18,9 @@
         "@bot-whatsapp/provider": "latest",
         "@whiskeysockets/baileys": "6.5.0",
         "cache-manager": "5.2.4",
+        "marked": "^14.1.2",
         "mongodb": "^6.9.0",
-        "openai": "^4.63.0",
+        "openai": "^3.3.0",
         "wa-sticker-formatter": "4.4.4"
     },
     "devDependencies": {

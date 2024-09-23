@@ -1,3 +1,6 @@
 1️⃣ = *Comprar en tienda online*
 2️⃣ = *Comprar via transferencia*
 3️⃣ = *Comprar con link de pago*
+4️⃣ = *Dar seguimiento a mi pedido*
+
+0️⃣ = *Volver al menu inicial*

@@ -1,28 +1,71 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '593982840685@s.whatsapp.net',
+    remoteJid: '593982541659@s.whatsapp.net',
     fromMe: false,
-    id: '7D50CAFC30C81CA8FE70045BE0DE5292',
+    id: '6297EEB19F966880527C1F7C30F5169A',
     participant: undefined
   },
-  messageTimestamp: 1727041004,
-  pushName: 'Yosué',
+  messageTimestamp: 1727057960,
+  pushName: 'WLT',
+  broadcast: false,
+  messageStubType: 2,
+  messageStubParameters: [ 'Message absent from node' ],
+  body: undefined,
+  from: '593982541659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982541659@s.whatsapp.net',
+    fromMe: false,
+    id: '6297EEB19F966880527C1F7C30F5169A',
+    participant: undefined
+  },
+  messageTimestamp: 1727057961,
+  pushName: 'WLT',
   broadcast: false,
   message: Message {
-    conversation: 'Hola',
+    extendedTextMessage: ExtendedTextMessage {
+      text: 'Comprar',
+      previewType: 0,
+      contextInfo: [ContextInfo],
+      inviteLinkGroupTypeV2: 0
+    },
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
+      deviceListMetadataVersion: 2
     }
   },
-  body: 'Hola',
-  from: '593982840685'
+  verifiedBizName: 'WLT',
+  body: 'Comprar',
+  from: '593982541659'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_60f725b7-94b5-4663-bad6-90b2d5c2293b',
-  keyword: 'key_8eaff006-b551-4102-b842-96ca2ddf9b22',
-  answer: 'Hola, para ayudarte a cumplir tus metas de bienestar y control de peso tenemos las siguientes opciones con las que puedes empezar.',
+  ref: 'ans_7ba5700c-b21f-4b89-a5ab-756b993d765a',
+  keyword: 'key_854b5819-04b7-4491-ac52-32943ed2881b',
+  answer: 'Para facilitarte la vida, todos tus compras incluyen envio gratis y tenemos las siguientes formas de compra que puedes elegir:',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 2000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'ff20582fb8bb86df681ca80d9bcf9e9d'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a863e6ac-22e2-453e-ad94-faea8d88afe6',
+  keyword: 'ans_7ba5700c-b21f-4b89-a5ab-756b993d765a',
+  answer: '1️⃣ = *Comprar en tienda online*\n' +
+    '2️⃣ = *Comprar via transferencia*\n' +
+    '3️⃣ = *Comprar con link de pago*\n' +
+    '4️⃣ = *Dar seguimiento a mi pedido*\n' +
+    '\n' +
+    '0️⃣ = *Volver al menu inicial*\n',
   options: {
     media: null,
     buttons: [],
@@ -35,56 +78,184 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '0d81c9d8dd70949c1c2fabf014b79cbc'
+  refSerialize: 'de3010a9891c7c1e6ae09b8420524796'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a04ba874-b1db-4b0a-8f7b-2496cbbef376',
+  keyword: 'ans_a863e6ac-22e2-453e-ad94-faea8d88afe6',
+  answer: '👉 *Ingresa el número de la opción de compra que deseas elegir:*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '8f814ceafa4adf325548d2adc879efa1'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '593982840685@s.whatsapp.net',
+    remoteJid: '593982541659@s.whatsapp.net',
     fromMe: false,
-    id: '3EB068383604A5AA6AEFDF',
+    id: 'A0100231FE4E6D2011AC2F936EEE6C5A',
     participant: undefined
   },
-  messageTimestamp: 1727041006,
-  pushName: 'Yosué',
+  messageTimestamp: 1727057971,
+  pushName: 'WLT',
   broadcast: false,
   message: Message {
-    protocolMessage: ProtocolMessage {
-      type: 4,
-      ephemeralExpiration: 0,
-      ephemeralSettingTimestamp: [Long],
-      disappearingMode: [DisappearingMode]
-    },
+    conversation: '4',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '',
-  from: '593982840685'
+  verifiedBizName: 'WLT',
+  body: '4',
+  from: '593982541659'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982541659@s.whatsapp.net',
+    fromMe: false,
+    id: '24D01CB87D5781CFD32B295CA6D6B697',
+    participant: undefined
+  },
+  messageTimestamp: 1727057979,
+  pushName: 'WLT',
+  broadcast: false,
+  message: Message {
+    conversation: '4826263',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  verifiedBizName: 'WLT',
+  body: '4826263',
+  from: '593982541659'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_794ffd82-47b4-40c4-a9ea-6cdbc34c0b20',
-  keyword: 'ans_60f725b7-94b5-4663-bad6-90b2d5c2293b',
-  answer: '1️⃣ = *Comprar productos*\n' +
-    '2️⃣ = *Solicitar asesoría*\n' +
-    '3️⃣ = *Descargar el catalogo*',
+  ref: 'ans_91c01f33-c11d-4b22-8c4d-80860a8ba1d7',
+  keyword: 'ans_abd2ffaa-08f6-4199-a6b8-f2ce8842e841',
+  answer: 'Permiteme unos minutos, mientras le doy seguimiento 🤗',
   options: {
     media: null,
     buttons: [],
     capture: false,
     child: null,
-    delay: 1500,
+    delay: 2000,
     idle: null,
     ref: null,
     nested: [],
     keyword: {},
     callback: false
   },
-  refSerialize: '3ccd3297c136f3028c6cf6c60e4802bf'
+  refSerialize: 'c9e4c553136b0124b1ac483a6335535c'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982541659@s.whatsapp.net',
+    fromMe: false,
+    id: '11745038B10E2B2177890C42F5FCD876',
+    participant: undefined
+  },
+  messageTimestamp: 1727058015,
+  pushName: 'WLT',
+  broadcast: false,
+  message: Message {
+    audioMessage: AudioMessage {
+      url: 'https://mmg.whatsapp.net/v/t62.7117-24/21432215_901831241995958_1270751009007245861_n.enc?ccb=11-4&oh=01_Q5AaIPfC31W3QvfXt9R0NbdnY5-6dfyWjPFYzl5PI5ef8zL5&oe=67183546&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'audio/ogg; codecs=opus',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      seconds: 6,
+      ptt: true,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7117-24/21432215_901831241995958_1270751009007245861_n.enc?ccb=11-4&oh=01_Q5AaIPfC31W3QvfXt9R0NbdnY5-6dfyWjPFYzl5PI5ef8zL5&oe=67183546&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      waveform: [Uint8Array]
+    },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  verifiedBizName: 'WLT',
+  body: '_event_voice_note__21b2d6e4-243d-4113-a20a-37b6e49149d0',
+  from: '593982541659'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9dabf612-b03b-47f0-8dac-92137618bcd7',
-  keyword: 'ans_794ffd82-47b4-40c4-a9ea-6cdbc34c0b20',
+  ref: 'ans_683c74a0-4e51-48bf-9571-2701f5700b5a',
+  keyword: 'key_ae951c77-1b72-4d06-82ac-a62e444f626b',
+  answer: 'Escuchando.. 🧏',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '63144358fa140601c6192dbfa59c4490'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '593982541659@s.whatsapp.net',
+    fromMe: false,
+    id: '0705470BA4BD64E75EB2F569375C04DC',
+    participant: undefined
+  },
+  messageTimestamp: 1727058055,
+  pushName: 'WLT',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si quiero asistencia',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  verifiedBizName: 'WLT',
+  body: 'Si quiero asistencia',
+  from: '593982541659'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_febc744a-6882-4e2d-a5e2-bf94bf5307a0',
+  keyword: 'key_77550be7-743f-4725-8723-599059be7b4a',
+  answer: 'Si tienes consultas o necesitas de nuestra ayuda tenemos las siguientes opciones para ponerte en contacto:\n' +
+    '1️⃣ = *Hacer una consulta*\n' +
+    '2️⃣ = *Solicitar una llamada*\n' +
+    '3️⃣ = *Programar una reunión*\n' +
+    '\n' +
+    '0️⃣ = Para volver al menu inicial',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 2000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '02a3c9255a9fc8bc79451afa9fd97c08'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a9f5db56-ca15-4613-bc03-9fdddb6aeaa3',
+  keyword: 'ans_febc744a-6882-4e2d-a5e2-bf94bf5307a0',
   answer: '👉 *Ingresa el número de la opción que elijas:*',
   options: {
     media: null,
@@ -98,86 +269,26 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '3ce8c4545bd268cffd52ce64889cefc8'
+  refSerialize: 'eb113e60959b94f1d046318341bef7d2'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '593982840685@s.whatsapp.net',
+    remoteJid: '593982541659@s.whatsapp.net',
     fromMe: false,
-    id: '3DA7C9923EA2FBEBB72A93BD1C912F15',
+    id: '0B65EC9D5839CD21424109D7FE7691F8',
     participant: undefined
   },
-  messageTimestamp: 1727041010,
-  pushName: 'Yosué',
+  messageTimestamp: 1727058089,
+  pushName: 'WLT',
   broadcast: false,
   message: Message {
-    conversation: '2',
+    conversation: '3',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
+      deviceListMetadataVersion: 2
     }
   },
-  body: '2',
-  from: '593982840685'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '593982840685@s.whatsapp.net',
-    fromMe: false,
-    id: '24CCF1B0C096752E93D3AC5BF563AB3E',
-    participant: undefined
-  },
-  messageTimestamp: 1727041019,
-  pushName: 'Yosué',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '593982840685'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '593982840685@s.whatsapp.net',
-    fromMe: false,
-    id: '06560F127BEE34EC0915306A3B792950',
-    participant: undefined
-  },
-  messageTimestamp: 1727041038,
-  pushName: 'Yosué',
-  broadcast: false,
-  message: Message {
-    conversation: 'Información sobre los productos y que debo tromar para control de peso',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Información sobre los productos y que debo tromar para control de peso',
-  from: '593982840685'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_f73c0f4c-4053-463e-b9cc-5be81189ce57',
-  keyword: 'ans_6431aea9-3f28-47d5-b054-a70b900242eb',
-  answer: 'Estoy feliz de poder ayudarte',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '38c6d805cbedba6e0e3b1dead74dab60'
+  verifiedBizName: 'WLT',
+  body: '3',
+  from: '593982541659'
 }

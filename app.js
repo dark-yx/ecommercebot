@@ -1,4 +1,5 @@
 const { createBot, createProvider, createFlow, addKeyword, EVENTS } = require('@bot-whatsapp/bot')
+require("dotenv").config
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
@@ -35,7 +36,7 @@ const extractNumber = (text) => {
     return match ? match[0] : null; // Devuelve el primer número encontrado o null si no encuentra ninguno
 };
 
-const flowVoice = addKeyword(EVENTS.VOICE_NOTE).addAnswer("Basado en la nota de voz..", null, async(ctx,ctxFn) => {
+const flowVoice = addKeyword(EVENTS.VOICE_NOTE).addAnswer("Escuchando.. 🧏", null, async(ctx,ctxFn) => {
     const text = await handlerAI(ctx)
     const prompt = promptConsultas
     const consulta = text
@@ -43,53 +44,38 @@ const flowVoice = addKeyword(EVENTS.VOICE_NOTE).addAnswer("Basado en la nota de 
     await ctxFn.flowDynamic(answer.content)})
 
 const flowConsultas = addKeyword(EVENTS.ACTION)
-    .addAnswer("Por favor realiza tu consulta ahora", { capture: true }, async (ctx, ctxFn) => {
-        const prompt = promptConsultas
-        const consulta = ctx.body
-        const answer = await chat(prompt, consulta)
-        await ctxFn.flowDynamic(answer.content)
-    })
-    .addAnswer("Estoy feliz de poder ayudarte", { capture: true }, async (ctx, ctxFn) => {
-        const prompt = promptConsultas
-        const consulta = ctx.body
-        const answer = await chat(prompt, consulta)
-        await ctxFn.flowDynamic(answer.content)
-    })
-    .addAnswer("Espero mis respuestas esten siendo utiles", { capture: true }, async (ctx, ctxFn) => {
+    .addAnswer("🤗 Por favor realiza tu consulta ahora ", { capture: true }, async (ctx, ctxFn) => {
         const prompt = promptConsultas
         const consulta = ctx.body
         const answer = await chat(prompt, consulta)
         await ctxFn.flowDynamic(answer.content)
     })
     .addAnswer(consultas, {
-        delay:2000
+        delay:1500
     })
     .addAnswer("👉 *Ingresa el número de la opción que elijas:*",
     { capture: true },
     async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
         const number = extractNumber(ctx.body); 
 
-        if (!number || !["1", "2", "3", "0"].includes(number)) {
+        if (!number || !["1", "2", "0"].includes(number)) {
             return fallBack(
-                "Opción no válida. Escribe '1' para seguir en este flujo, '2' para regresar al menú de servicios, '3' para volver al menú principal, o '0' para salir."
+                "Opción no válida. Escribe '1' para hacer una nueva consulta, '2' para comprar productos, o '3' para volver al menú inicial."
             );
         }
         switch (number) {
             case "1":
                 return gotoFlow(flowConsultas);
             case "2":
-                return gotoFlow(flowLlamada);
-            case "3":
-                return gotoFlow(flowAsistencia);
+                return gotoFlow(flowComprarproductos);
             case "0":
-                return await flowDynamic(
-                    "Saliendo... Puedes volver a acceder a este menú escribiendo *'Menu'* ");
+                return gotoFlow(flowInicial);
         }
 
     }
 );
 
-const flowComprarproductos = addKeyword(['comprar en linea', 'comprar online' , 'quiero comprar los productos' , 'como puedo comprar los productos', 'deseo realizar una compra', 'comprar producto', 'comprar los productos'], EVENTS.ACTION)
+const flowComprarproductos = addKeyword(['comprar en linea', 'comprar online' , 'quiero comprar los productos' , 'comprar', 'como puedo comprar los productos', 'deseo realizar una compra', 'comprar producto', 'comprar los productos', 'quiero comprar', 'hacer una compra'], EVENTS.ACTION)
     .addAnswer("Para facilitarte la vida, todos tus compras incluyen envio gratis y tenemos las siguientes formas de compra que puedes elegir:", {
         delay: 2000
     })
@@ -101,9 +87,9 @@ const flowComprarproductos = addKeyword(['comprar en linea', 'comprar online' , 
     async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
         const number = extractNumber(ctx.body); 
 
-        if (!number || !["1", "2", "3", "0"].includes(number)) {
+        if (!number || !["1", "2", "3", "4", "0"].includes(number)) {
             return fallBack(
-                "Opción no válida. Escribe '1' si deseas comprar en nuestra tienda online, '2' si deseas comprar via transferencia, '3' para comprar mediante un link de pago, o '0' para ir al menu principal."
+                "Opción no válida. Escribe '1' si deseas comprar en nuestra tienda online, '2' si deseas comprar via transferencia, '3' para comprar mediante un link de pago, '4' para darle seguimiento a tu pedido, o '0' para ir al menu inicial."
             );
         }
         switch (number) {
@@ -113,9 +99,10 @@ const flowComprarproductos = addKeyword(['comprar en linea', 'comprar online' , 
                 return gotoFlow(flowComprarcontransferencia);
             case "3":
                 return gotoFlow(flowComprarconlinkdepago);
+            case "4":
+                return gotoFlow(flowSeguimientodepedido);
             case "0":
-                return await flowDynamic(
-                    "Saliendo... Puedes volver a acceder a este menú escribiendo *Menu* ");
+                return gotoFlow(flowInicial);
         }
 
     }
@@ -134,13 +121,13 @@ const flowCatalogo = addKeyword(['catalogo de productos', 'quiero un catalogo', 
     })
 
 
-const flowComprarentienda = addKeyword(['comprar en la tienda online', 'comprar en el ecommere'], EVENTS.ACTION)
+const flowComprarentienda = addKeyword(EVENTS.ACTION)
     .addAnswer("Perfecto, para comprar en nuestra tienda online porfavor da clic en el siguiente enlace")
     .addAnswer("https://productosherba.life/herbalife/", {
         delay: 1500,
     })
 
-const flowComprarcontransferencia = addKeyword(['comprar con transferencia', 'comprar via transferencia'], EVENTS.ACTION)
+const flowComprarcontransferencia = addKeyword(EVENTS.ACTION)
     .addAnswer("Perfecto, para comprar mediante transferencia, primero da clic en el siguiente enlace y selecciona los productos que deseas, despues, de clic en enviar solicitud de pedido para recibir tu numero de orden y enviarte la información bancaria para el pago", {
         delay: 1000,
     })
@@ -148,12 +135,20 @@ const flowComprarcontransferencia = addKeyword(['comprar con transferencia', 'co
         delay: 1500,
     })
 
-const flowComprarconlinkdepago = addKeyword(['comprar con transferencia', 'comprar via transferencia'], EVENTS.ACTION)
+const flowComprarconlinkdepago = addKeyword(EVENTS.ACTION)
     .addAnswer("Perfecto, para comprar mediante un link de pago, primero da clic en el siguiente enlace y selecciona los productos que deseas, despues, de clic en enviar solicitud de pedido para recibir tu numero de orden y enviarte el link de pago directo", {
         delay: 1000,
     })
     .addAnswer("https://wa.me/c/593989032182", {
         delay: 1500,
+    })
+
+    const flowSeguimientodepedido = addKeyword(EVENTS.ACTION)
+    .addAnswer("Estare encantada de ayudarte a darle seguimiento. Porfavor, solo necesito que me indique el numero de tu pedido.", { capture: true }, (ctx) => {
+        (ctx.body)
+    })
+    .addAnswer("Permiteme unos minutos, mientras le doy seguimiento 🤗", {
+        delay:2000
     })
 
 
@@ -223,7 +218,7 @@ const flowInicial = addKeyword (EVENTS.ACTION)
     }
 );
 
-const flowSaludo = addKeyword (['hi', 'hola', 'hey', 'ola', 'alo', 'hello', 'mas informacion', 'más información', 'deseo información', 'ayuda'])
+const flowSaludo = addKeyword (['hi', 'hola', 'hey', 'ola', 'alo', 'hello', 'información', 'mas informacion', 'más información', 'deseo información', 'ayuda'])
     .addAnswer("Hola, para ayudarte a cumplir tus metas de bienestar y control de peso tenemos las siguientes opciones con las que puedes empezar.", {
         delay: 1000
     })
@@ -262,7 +257,7 @@ const main = async () => {
         dbUri: process.env.MONGO_DB_URI,
         dbName: "WLTAsistente"
     })
-    const adapterFlow = createFlow([flowComprarproductos, flowCatalogo,flowConsultas, flowLlamada, flowAgendamientos, flowVoice, flowAsistencia, flowSaludo, flowComprarentienda, flowComprarcontransferencia, flowComprarconlinkdepago])
+    const adapterFlow = createFlow([flowComprarproductos, flowCatalogo,flowConsultas, flowLlamada, flowAgendamientos, flowVoice, flowAsistencia, flowSaludo, flowComprarentienda, flowComprarcontransferencia, flowComprarconlinkdepago, flowSeguimientodepedido])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot(
