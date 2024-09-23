@@ -58,9 +58,9 @@ const flowConsultas = addKeyword(EVENTS.ACTION)
     async (ctx, { gotoFlow, fallBack, flowDynamic }) => {
         const number = extractNumber(ctx.body); 
 
-        if (!number || !["1", "2", "0"].includes(number)) {
+        if (!number || !["1", "2", "3", "0"].includes(number)) {
             return fallBack(
-                "Opción no válida. Escribe '1' para hacer una nueva consulta, '2' para comprar productos, o '3' para volver al menú inicial."
+                "Opción no válida. Escribe '1' para hacer una nueva consulta, '2' para comprar productos, '3' para solicitar una llamada, o '0' para volver al menú inicial."
             );
         }
         switch (number) {
@@ -68,6 +68,8 @@ const flowConsultas = addKeyword(EVENTS.ACTION)
                 return gotoFlow(flowConsultas);
             case "2":
                 return gotoFlow(flowComprarproductos);
+            case "3":
+                return gotoFlow(flowLlamada);
             case "0":
                 return gotoFlow(flowInicial);
         }
@@ -153,7 +155,7 @@ const flowComprarconlinkdepago = addKeyword(EVENTS.ACTION)
 
 
 const flowLlamada = addKeyword(['devolver llamada', 'necesito que me llames', 'puedes llamarme', 'te llamo' , 'te puedo llamar', 'llamame', 'agendar una llamada', 'programar una llamada', 'programar llamada', 'agendar llamada'], EVENTS.ACTION)
-    .addAnswer("Listo, en un momento alguien del equipo te contactará con una llamada. Le agradecemos de antemano su paciencia.")
+    .addAnswer("Listo, en un momento alguien del equipo te contactará con una llamada. Agradecemos de antemano la paciencia.")
 
 const flowAgendamientos = addKeyword(['programar una reunion', 'programar reunión', 'agendar una reunión', 'agendamiento de reunion', 'programar una reunión', 'agendar reunion', 'reunion agendamiento', 'agendamiento reunion'], EVENTS.ACTION)
     .addAnswer("Perfecto, nos comunicaremos contigo en breve para programar una reunión que puede ser online o presencial.")
@@ -185,6 +187,10 @@ const flowAsistencia = addKeyword(['asistencia', 'asesoria'], EVENTS.ACTION)
 
     }
 );
+
+const flowGracias = addKeyword(['gracias', 'graciass', 'graciasss', 'agradecido', 'agradecida' , 'thank you', 'thank', 'agradecimiento'])
+    .addAnswer("De nada! 🤗 Estoy para servirte")
+
 
 const flowInicial = addKeyword (EVENTS.ACTION)
     .addAnswer("Estas son las opciones iniciales que tienes para elegir", {
@@ -257,7 +263,7 @@ const main = async () => {
         dbUri: process.env.MONGO_DB_URI,
         dbName: "WLTAsistente"
     })
-    const adapterFlow = createFlow([flowComprarproductos, flowCatalogo,flowConsultas, flowLlamada, flowAgendamientos, flowVoice, flowAsistencia, flowSaludo, flowComprarentienda, flowComprarcontransferencia, flowComprarconlinkdepago, flowSeguimientodepedido])
+    const adapterFlow = createFlow([flowComprarproductos, flowCatalogo,flowConsultas, flowLlamada, flowAgendamientos, flowVoice, flowAsistencia, flowSaludo, flowComprarentienda, flowComprarcontransferencia, flowComprarconlinkdepago, flowSeguimientodepedido, flowGracias])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot(

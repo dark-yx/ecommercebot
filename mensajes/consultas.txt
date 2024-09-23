@@ -1,5 +1,6 @@
 Aqui tienes estas opciones para continuar:
 1️⃣ = *Hacer una nueva consulta*
 2️⃣ = *Comprar productos*
+3️⃣ = *Solicitar una llamada*
 
-0️⃣ = *Volver al menu incial*
+0️⃣ = *Volver al menu inicial*
